@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Blogs - Mu dou Blog</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="{{static_url("assets/css/main.css")}}" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body class="landing">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header" class="alt">
+					<h1><a href="/index">Mu Dou</a> by HTML5</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="/index">Home</a></li>
+							{%if IsAdmin%}
+								<li>
+									<a href="#" class="icon fa-angle-down">Manager</a>
+									<ul>
+										<li><a href="/createblog">Creat New Blog</a></li>
+										<li><a href="/setting">Setting</a></li>
+									</ul>
+								</li>
+								<li><a href="/about">About Me</a></li>
+								<li><a href="/signout" class="button">Sign Out</a></li>
+							{%else%}
+								<li><a href="/about">About Me</a></li>
+								<li><a href="/login" class="button">Sign In</a></li>
+							{%end%}
+						</ul>
+					</nav>
+				</header>
+				
+			<section id="banner">
+				<h2>Welcome to My Blog</h2>
+				<p>生有涯  知无涯  学无涯</p>
+			</section>
+				
+
+			<!-- Main -->
+			<section id="main" class="container 125%">
+				<div class="row 125%">
+					<div class="3u 12u(narrower)" align="left">
+
+						<section class="box">
+							<div align="center">
+							    <p><img src="{{static_url("images/Zero.png")}}" align="center" /> </p>
+							    <h3>Mu Dou</h3>
+							    <p>你怎么这么笨 -- 因为我是猪啊！！！</p>
+							</div>
+							<h4>Article Categories</h4>
+							<ul>
+								{%for Info in GroupInfos%}
+									<li><a href="/index/{{Info[1]}}/">{{Info[0]}}  ({{Info[2]}})</a></li>
+								{%end%}
+							</ul>
+							<ul class="actions"> </ul>
+						</section>
+
+					</div>
+					<div class="9u 12u(narrower)">
+
+						<section class="box">
+							{%for Index in BlogIndexs%}
+								<header>
+									<h4><a href="/blog/{{Index[2]}}"><b>{{Index[0]}}</b></a></h4>
+									<p>{{Index[1]}} Views:({{Index[3]}})</p>
+								</header>
+								<hr />
+							{%end%}
+							
+						</section>
+						<br>
+						<div align="center">
+							{%for num in range(1,AllPageNum+1)%}
+								{%if num == NowPage %}
+									<a style="font-size: 14px;padding: 2px 6px;display: inline-block;border:1px solid #CCC;background:#FFF;">&nbsp;<strong >{{num}}</strong></a>&nbsp;
+								{%else%}
+									{%if GroupCode%}
+										&nbsp;<a href="/index/{{GroupCode}}/{{num}}/" style="">{{num}}</a>&nbsp;
+									{%else%}
+										&nbsp;<a href="/index/default/{{num}}/" style="">{{num}}</a>&nbsp;
+									{%end%}
+								{%end%}
+							{%end%}
+							<span>共 {{AllPageNum}} 页</span>
+						</div>
+					</div>
+				</div>
+
+			</section>
+			<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+					<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+					<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+					<li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="{{static_url("assets/js/jquery.min.js")}}"></script>
+			<script src="{{static_url("assets/js/jquery.dropotron.min.js")}}"></script>
+			<script src="{{static_url("assets/js/jquery.scrollgress.min.js")}}"></script>
+			<script src="{{static_url("assets/js/skel.min.js")}}"></script>
+			<script src="{{static_url("assets/js/util.js")}}"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="{{static_url("assets/js/main.js")}}"></script>
+
+
+	</body>
+</html>

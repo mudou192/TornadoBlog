@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Login - Mu dou Blog</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="{{static_url("assets/css/main.css")}}" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body class="landing">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header" class="alt">
+					<h1><a href="index">Mu Dou</a> by HTML5</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="/index">Home</a></li>
+							{%if IsAdmin%}
+								<li>
+									<a href="#" class="icon fa-angle-down">Manager</a>
+									<ul>
+										<li><a href="/createblog">Creat New Blog</a></li>
+										<li><a href="/setting">Setting</a></li>
+									</ul>
+								</li>
+								<li><a href="/about">About Me</a></li>
+								<li><a href="/signout" class="button">Sign Out</a></li>
+							{%else%}
+								<li><a href="/about">About Me</a></li>
+								<li><a href="/login" class="button">Sign In</a></li>
+							{%end%}
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Banner -->
+				<section id="banner">
+					<h2>My Blog</h2>
+					<form method="post" action="/checkuser" >
+						<!--  好像是占用浏览器宽度百分比并居中-->
+						<div class="container 50%">
+							<div class="row uniform 50%">
+								<div class="container 50%">
+									<input type="text" name="username" id="name" value="{{username}}" placeholder="Please Enter UserName..." style="color:#8E8E8E;"/>
+								</div>
+							</div>
+							<div class="row uniform 50%">
+								<div class="container 50%">
+									<input type="password" name="password" id="password" value="{{password}}" placeholder="Please Enter PassWord..."  style="color:#8E8E8E;"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="container 50%">
+							<div class="row uniform 50%">
+								<ul class="actions">
+									<li><input type="submit" value="Sign In" /></li>
+									<li><a href="#" class="button">暂不支持注册</a></li>
+								</ul>
+
+								<h4>{{message}}</h4>
+							</div>
+						</div>
+						{% raw xsrf_form_html() %}
+					</form>
+				</section>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+						<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+						<li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</footer>
+
+
+		</div>
+		
+		<!-- Scripts -->
+			<script src="{{static_url("assets/js/jquery.min.js")}}"></script>
+			<script src="{{static_url("assets/js/jquery.dropotron.min.js")}}"></script>
+			<script src="{{static_url("assets/js/jquery.scrollgress.min.js")}}"></script>
+			<script src="{{static_url("assets/js/skel.min.js")}}"></script>
+			<script src="{{static_url("assets/js/util.js")}}"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="{{static_url("assets/js/main.js")}}"></script>
+
+	</body>
+</html>
