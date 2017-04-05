@@ -14,3 +14,10 @@
 第三次还没改完，就换了Wordpress,前端不好，加上本来就是做着玩的，就当个Demo看看，跟 Wordpress 比占用资源挺少的——10M+（Wordpress都在200M以上）
 
 个人博客:[http://zahuodian.me/](http://zahuodian.me/)
+
+
+![image1](http://zahuodian.me/wp-content/uploads/2017/02/954de83f-7435-441c-8de5-7f8c7c83a2c3.jpg)
+
+![image2](http://zahuodian.me/wp-content/uploads/2017/02/c7ddee27-665a-4b87-b225-e0ce569c284e.jpg)
+
+![image3](http://zahuodian.me/wp-content/uploads/2017/02/dba5debf-5dd7-4578-b4b2-2a4218ba59ff.jpg)
